@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+data/
+workspace/_runs/
+*.exe
+*.o
+.env

@@ -1,0 +1,25 @@
+# VertexAgent 本地配置。模型可在网页右上角切换，切换结果写入 data/settings.json。
+server:
+  host: "0.0.0.0"
+  port: 8765
+
+llm:
+  # 官方 DeepSeek V4.1-Flash 是 552B 参数 MoE，这台电脑装不下完整权重。
+  # 名称带 cloud 的是 Ollama 云端标签，当前会返回 402，不要选。
+  # 问答和写代码都用页面上选中的模型。这里的 model 只在还没选过时作为回退。
+  base_url: "http://127.0.0.1:11434"
+  model: "qwen2.5:7b"
+  temperature: 0.4
+  num_ctx: 16384
+  num_predict: 8192
+  timeout_sec: 300
+
+agent:
+  max_steps: 10
+  # 允许 Agent 修改自己的源码（每次备份，Python 语法错误自动回滚）
+  self_edit: true
+
+matlab:
+  executable: "C:\\Program Files\\MATLAB\\R2024b\\bin\\matlab.exe"
+
+workspace: "workspace"
